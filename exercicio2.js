@@ -34,7 +34,7 @@ class ProductManager {
         if (product) {
             console.log("Produto encontrado:", product);
         } else {
-            console.error("Não encontrado", product);
+            console.error("Não encontrado");
         }
     }
 }
