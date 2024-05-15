@@ -1,7 +1,7 @@
 class ProductManager {
     constructor() {
         this.products = [];
-        this.productIdCounter = 1;
+        this.counter = 1;
     }
 
     addProduct(title, description, price, thumbnail, code, stock) {
@@ -11,12 +11,12 @@ class ProductManager {
         }
 
         if (this.products.some(product => product.code === code)) {
-            console.error("O código do produto já existe");
+            console.error("Já existe um produto com este código");
             return;
         }
 
         const product = {
-            id: this.productIdCounter++,
+            id: this.counter++,
             title,
             description,
             price,
@@ -39,9 +39,8 @@ class ProductManager {
     }
 }
 
-
 const productManager = new ProductManager();
 productManager.addProduct("Brinco", "Brinco prata flor jasmin", 89.55, "documents/larissa/brincoJasmin.jpg", "001", 50);
-productManager.addProduct("Bota", "Bota arezzo preta", 139.50, "documnets/larissa/botaArezzoPreta.jpg", "002", 30);
+productManager.addProduct("Bota", "Bota arezzo preta", 139.50, "documents/larissa/botaArezzoPreta.jpg", "002", 30);
 productManager.getProductById(1);
 productManager.getProductById(11);
