@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Bota",
+    "description": "Bota rosa",
+    "price": 139,
+    "thumbnail": "caminho/bota.jpg",
+    "code": "00895",
+    "stock": 75
+  },
+  {
+    "id": 2,
+    "title": "Bota",
+    "description": "Bota rosa",
+    "price": 139,
+    "thumbnail": "caminho/bota.jpg",
+    "code": "00895",
+    "stock": 75
+  },
+  {
+    "id": 3,
+    "title": "Bota",
+    "description": "Bota rosa",
+    "price": 139,
+    "thumbnail": "caminho/bota.jpg",
+    "code": "00895",
+    "stock": 75
+  }
+]
