@@ -40,7 +40,7 @@ const startServer = async () => {
     try {
         const port = await detectPort(defaultPort);
         app.listen(port, () => {
-            console.log(`Servidor rodando em http://localhost:${port}`);
+            console.log('Servidor rodando em http://localhost:${port}');
         });
     } catch (error) {
         console.error('Não foi encontrada uma porta disponível', error);
