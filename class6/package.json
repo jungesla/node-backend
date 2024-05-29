@@ -1,0 +1,14 @@
+{
+  "name": "my-express-server",
+  "version": "1.0.0",
+  "description": "Servidor Express para gerenciar produtos",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "detect-port": "^1.6.1",
+    "express": "^4.17.1",
+    "moment": "^2.29.1"
+  }
+}

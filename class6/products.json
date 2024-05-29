@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "title": "Saia preta",
+        "description": "Saia preta com brilho",
+        "price": 130,
+        "thumbnail": "saia_preta",
+        "code": "1234567",
+        "stock": 16
+    },
+    {
+        "id": 2,
+        "title": "Lápis de cor",
+        "description": "Lápis faber castell 30 cores",
+        "price": 14,
+        "thumbnail": "lapis_faber",
+        "code": "12344",
+        "stock": 45
+    },
+    {
+        "id": 3,
+        "title": "Cobertor",
+        "description": "Cobertor solteiro listrado teka",
+        "price": 90,
+        "thumbnail": "cobertor solteiro listras",
+        "code": "12349",
+        "stock": 35
+    }
+]
