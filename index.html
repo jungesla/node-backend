@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat com WebSocket</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #222;
+            color: #f90;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;           
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #444;
+            color: #f90;
+            border-radius: 4px;
+        }
+        #send {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #f90;
+            color: #222;
+            border-radius: 4px;
+            cursor: pointer;      
+           
+        }
+        #send:hover {
+            background-color: #c60;
+        }
+        #list {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            margin-top: 20px;
+        }
+        #list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #555;
+            border-radius: 4px;
+            color: #f90;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chat com WebSocket</h1>
+        <input type="text" id="input" placeholder="Digite uma mensagem:">
+        <button id="send">Enviar</button>
+        <ul id="list"></ul>
+    </div>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:3000');
+    
+        socket.onmessage = (event) => {
+            const msg = JSON.parse(event.data);
+            const messagesList = document.getElementById('list');            
+            
+            messagesList.innerHTML = '';            
+            msg.forEach(message => {
+                const list = document.createElement('li');
+                list.textContent = message.mensagem;
+                messagesList.appendChild(list);
+            });
+        };
+    
+        document.getElementById('send').addEventListener('click', () => {
+            const input = document.getElementById('input');
+            const message = input.value;           
+            socket.send(JSON.stringify({ mensagem: message }));
+            input.value = '';
+        });
+    </script>
+</body>
+</html>
