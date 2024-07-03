@@ -41,4 +41,35 @@ db.alunos.insertMany([
 pegar todos -    db.alunos.find().pretty()
 pegar só do sexo masculino -    db.alunos.find({ sexo: "M" }).pretty()
 pegar total documentos -   db.alunos.countDocuments()
-pegar criterio é mulher -  db.alunos.countDocuments({ sexo: "F" })
+pegar criterio é mulher - db.alunos.countDocuments({ sexo: "F" })
+
+
+db.clientes.insertMany([
+    {
+        nome: "Paulo",     
+        idade: 25,     
+    },
+    {
+        nome: "João",  
+        idade: 22,    
+    },
+    {
+        nome: "Lúcia",    
+        idade: 25,
+    },
+    {
+        nome: "João",    
+        idade: 29,      
+    },
+    {
+        nome: "Fede",
+        idade: 35,
+    }
+])
+
+ordernar por idade - db.clientes.find().sort({idade: 1})
+mais jovem - db.clientes.find().sort({ idade: 1}).limit(1)
+segundo mais jovem - db.clientes.find().sort({idade: 1}).skip(1).next()
+listar cliente John - db.clientes.find({nome: "John"})
+listar clientes John e que tem 29 anos - db.clientes.find({nome: "John",idade:29})
+listar clientes chamados João ou Lúcia - db.clientes.find({ $or:[{nome: "João"}, {nome: "Lúcia" }]})
