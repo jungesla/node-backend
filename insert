@@ -1,0 +1,39 @@
+db.alunos.insertMany([
+    {
+        nome: "Larissa Amanda",
+        sobrenome: "Junges",
+        curso: "Backend",
+        idade: 15,
+        correspondencia: "rua Xv novembro 201",
+        sexo: "F"
+    },
+    {
+        nome: "Lucas",
+        sobrenome: "Junges",
+        curso: "Backend",
+        idade: 40,
+        correspondencia: "rua Flores 105",
+        sexo: "M"
+    },
+    {
+        nome: "Jolie",
+        sobrenome: "Vernancio",
+        curso: "Python",
+        idade: 55,
+        correspondencia: "rua Flores 109",
+        sexo: "F"
+    },
+    {
+        nome: "Louise",
+        sobrenome: "Nazca",
+        curso: "Python",
+        idade: 18,
+        correspondencia: "rua conceicao freitas 109",
+        sexo: "F"
+    },
+    {
+        nome: "Hanna",
+        sobrenome: "Montana",
+        curso: "Javascript"
+    }
+])
