@@ -37,3 +37,8 @@ db.alunos.insertMany([
         curso: "Javascript"
     }
 ])
+
+pegar todos -    db.alunos.find().pretty()
+pegar só do sexo masculino -    db.alunos.find({ sexo: "M" }).pretty()
+pegar total documentos -   db.alunos.countDocuments()
+pegar criterio é mulher -  db.alunos.countDocuments({ sexo: "F" })
